@@ -1,0 +1,158 @@
+{
+  "Maternal Health": [
+    {
+      "question": "Maxaa la sameeyaa marka la ogaado in aad uur leedahay?",
+      "answer": "Waa muhiim in la arko dhakhtar si loo bilaabo daryeelka uurka.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Maxay yihiin calaamadaha digniinta ee uurka?",
+      "answer": "Haddii aad aragto dhiig-bax, xanuun ama wareer, la xiriir dhakhtar.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Goorma ayay tahay in la arko dhakhtar markaad uur leedahay?",
+      "answer": "Bil kasta hal mar, ama sida dhakhtarku kuu faro.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Cunto noocee ah ayay tahay in uurleydu cunto?",
+      "answer": "Cunto nafaqo leh sida khudrad, hilib, kalluun, iyo caano.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Miyay uurleydu cabi karaan daawo kasta?",
+      "answer": "Kaliya daawooyinka uu dhakhtarku kuu qoro.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Miyaan jimicsi samayn karaa intaan uur leeyahay?",
+      "answer": "Haa, jimicsi fudud sida socodka waa faa’iido leh.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Maxaa keeni kara uur lumis?",
+      "answer": "Cadaadis, dhaawac, ama dhibaatooyin caafimaad.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Waa maxay caadada subaxnimo ee uurleyda?",
+      "answer": "Waa lalabbo iyo matag subaxdii, caadi ayay u tahay.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Sidee loo ogaadaa jinsiga ilmaha?",
+      "answer": "Waxaa lagu ogaan karaa ultrasound-ka usbuuca 18-20.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Waa maxay daryeelka dhalmada kadib?",
+      "answer": "Ka warqabka nadiifnimada, nafaqada, iyo nasashada hooyada.",
+      "audio": "maternal_1.mp3"
+    }
+  ],
+  "Menstrual Health": [
+    {
+      "question": "Waa maxay caado aan caadi ahayn?",
+      "answer": "Caado aan caadi ahayn waa mid dhiig badan leh ama muddo gaaban/dheer ah.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Maxay yihiin xanuunada la xiriira caadada?",
+      "answer": "Xanuunka caloosha, dhabarka, iyo murqaha ayaa caadi ah.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Miyaan caado noqon kartaa bil la'aan?",
+      "answer": "Haa, cadaadis ama isbedelka jirka ayaa sababi kara.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Goorma ayay gabadhu bilowdaa caadada?",
+      "answer": "Badanaa da'da 10-15 sano.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Sidee loo xakameeyaa xanuunka caadada?",
+      "answer": "Isticmaalka daawo xanuun baabi'isa iyo nasasho ayaa caawin kara.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Waa maxay caado wareer?",
+      "answer": "Marka caadadu timaado wakhti kala duwan bil kasta.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Miyaan la socon karaa caadadayda?",
+      "answer": "Haa, adigoo isticmaalaya jadwal ama app.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Miyaan u baahanahay in aan arko dhakhtar?",
+      "answer": "Haa, haddii caadadu aad u dhib badan tahay ama aan imaan.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Caadadu miyay saameyn ku leedahay maskaxda?",
+      "answer": "Haa, waxaa dhici karta niyad jab ama xanaaq.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Miyaan jimicsi sameyn karaa marka aan caadada hayo?",
+      "answer": "Haa, jimicsi fudud ayaa kaa yareyn kara xanuunka.",
+      "audio": "maternal_1.mp3"
+    }
+  ],
+  "Child Care": [
+    {
+      "question": "Sidee loo daryeelaa ilmo cusub?",
+      "answer": "Nadaafad joogto ah, naas nuujin iyo nasasho badan.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Ilmaha goorma la talaalaa?",
+      "answer": "Bilaha 0, 2, 4, 6, iyo 9 waana muhiim.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Waa maxay sababta ilmuhu u ooyo badan yahay?",
+      "answer": "Abaal, gaajo, xanuun ama hurdo la’aan.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Sidee loo ogaadaa in ilmuhu qabo xumad?",
+      "answer": "Adigoo cabbiraaya heerkulka jirkiisa.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Sidee loo yareeyaa xumadda ilmaha?",
+      "answer": "Biyo badan iyo daawo uu dhakhtar qoray.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Waa maxay caloosha adag ee ilmaha?",
+      "answer": "Marka ilmaha calooshiisu adkaato, badanaa waa saxaro la’aan.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Ilmuhu ma u baahan yahay hurdo badan?",
+      "answer": "Haa, hurdo badan ayaa muhiim u ah korriinkiisa.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Sidee loo bilaabaa cunto adag?",
+      "answer": "Kadib 6 bilood, tijaabi cunnooyin fudud sida baradho.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Ilmaha miyaa la maydhaa maalin kasta?",
+      "answer": "Haa, si nadiifnimadiisa loo ilaaliyo.",
+      "audio": "maternal_1.mp3"
+    },
+    {
+      "question": "Maxaa keena finan ilmaha wajigiisa?",
+      "answer": "Waa hormoono caadi ah, badanaa iskiis ayay u tagaan.",
+      "audio": "maternal_1.mp3"
+    }
+  ]
+}
