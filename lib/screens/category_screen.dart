@@ -6,7 +6,7 @@ import 'answer_screen.dart';
 class CategoryScreen extends StatefulWidget {
   final String category;
 
-  const CategoryScreen({Key? key, required this.category}) : super(key: key);
+  const CategoryScreen({super.key, required this.category});
 
   @override
   State<CategoryScreen> createState() => _CategoryScreenState();
@@ -34,27 +34,50 @@ class _CategoryScreenState extends State<CategoryScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text(widget.category)),
+      appBar: AppBar(
+        backgroundColor: const Color(0xFFF3E5F5),
+        elevation: 0,
+        title: Text(
+          widget.category,
+          style: const TextStyle(
+            color: Colors.purple,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        iconTheme: const IconThemeData(color: Colors.purple),
+      ),
       body: questions.isEmpty
           ? const Center(child: CircularProgressIndicator())
           : ListView.builder(
+              padding: const EdgeInsets.all(16),
               itemCount: questions.length,
               itemBuilder: (context, index) {
                 final q = questions[index];
-                return ListTile(
-                  title: Text(q['question']),
-                  onTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (_) => AnswerScreen(
-                          question: q['question'],
-                          answer: q['answer'],
-                          audioFile: q['audio'], // for later audio playback
+                return Card(
+                  elevation: 2,
+                  margin: const EdgeInsets.only(bottom: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  child: ListTile(
+                    title: Text(
+                      q['question'],
+                      style: const TextStyle(fontSize: 16),
+                    ),
+                    trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => AnswerScreen(
+                            question: q['question'],
+                            answer: q['answer'],
+                            audioFile: q['audio'],
+                          ),
                         ),
-                      ),
-                    );
-                  },
+                      );
+                    },
+                  ),
                 );
               },
             ),

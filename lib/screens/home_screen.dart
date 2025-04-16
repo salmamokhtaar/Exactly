@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'category_landing_screen.dart';
-
+import 'package:caawiye_caafimaad/main.dart';
 class HomeScreen extends StatelessWidget {
-  const HomeScreen({Key? key}) : super(key: key);
+  final void Function(bool) onThemeToggle;
+
+  const HomeScreen({super.key, required this.onThemeToggle});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFFFF1F7), // Soft pink background
+      backgroundColor: const Color(0xFFFFF1F7),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -18,7 +19,6 @@ class HomeScreen extends StatelessWidget {
                 radius: 50,
                 backgroundImage: AssetImage('assets/girl.png'),
               ),
-
               const SizedBox(height: 24),
               const Text(
                 "Caawiye Caafimaad",
@@ -39,26 +39,20 @@ class HomeScreen extends StatelessWidget {
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.purple,
                   foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 32,
-                    vertical: 14,
-                  ),
+                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 14),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
                 ),
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                      builder: (_) => const CategoryLandingScreen(),
+                      builder: (_) => BottomNavScreen(onThemeToggle: onThemeToggle),
                     ),
                   );
                 },
-                child: const Text(
-                  "Get Started",
-                  style: TextStyle(fontSize: 16),
-                ),
+                child: const Text("Get Started", style: TextStyle(fontSize: 16)),
               ),
             ],
           ),
