@@ -64,105 +64,105 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           itemBuilder: (context, index) {
             final slide = _slides[index];
 
-            return Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24),
-              child: Column(
-                children: [
-                  // Skip
-                  Align(
-                    alignment: Alignment.topRight,
-                    child: Padding(
-                      padding: const EdgeInsets.only(top: 12),
-                      child: TextButton(
-                        onPressed: () {
-                          Navigator.pushReplacement(
-                            context,
-                            MaterialPageRoute(
-                              builder: (_) => HomeScreen(onThemeToggle: widget.onThemeToggle),
-                            ),
-                          );
-                        },
-                        child: const Text("Skip", style: TextStyle(color: Colors.purple)),
+            return SizedBox(
+              height: MediaQuery.of(context).size.height,
+              child: SingleChildScrollView(
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  child: Column(
+                    children: [
+                      // Skip button
+                      Align(
+                        alignment: Alignment.topRight,
+                        child: TextButton(
+                          onPressed: () {
+                            Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                builder: (_) => HomeScreen(onThemeToggle: widget.onThemeToggle),
+                              ),
+                            );
+                          },
+                          child: const Text("Skip", style: TextStyle(color: Colors.purple)),
+                        ),
                       ),
-                    ),
-                  ),
 
-                  const SizedBox(height: 12),
+                      const SizedBox(height: 12),
 
-                  // Logo & App Name (only first screen)
-                  if (index == 0) ...[
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: const [
-                        Icon(Icons.medical_services_outlined, color: Colors.purple, size: 28),
-                        SizedBox(width: 8),
-                        Text(
-                          'Caawiye',
-                          style: TextStyle(
-                            fontSize: 36,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.purple,
+                      // Logo and name (first screen only)
+                      if (index == 0) ...[
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: const [
+                            Icon(Icons.medical_services_outlined, color: Colors.purple, size: 28),
+                            SizedBox(width: 8),
+                            Text(
+                              'Caawiye',
+                              style: TextStyle(
+                                fontSize: 28,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.purple,
+                              ),
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 20),
+                      ],
+
+                      // Title
+                      Text(
+                        slide['title']!,
+                        textAlign: TextAlign.center,
+                        style: const TextStyle(
+                          fontSize: 26,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.black,
+                        ),
+                      ),
+
+                      const SizedBox(height: 20),
+
+                      // Image
+                      Image.asset(
+                        slide['image']!,
+                        width: MediaQuery.of(context).size.width * 0.85,
+                        fit: BoxFit.contain,
+                      ),
+
+                      const SizedBox(height: 20),
+
+                      // Description
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 8),
+                        child: Text(
+                          slide['desc']!,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(fontSize: 16, color: Colors.black54, height: 1.5),
+                        ),
+                      ),
+
+                      const SizedBox(height: 40),
+
+                      // Dots
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: List.generate(
+                          _slides.length,
+                          (i) => AnimatedContainer(
+                            duration: const Duration(milliseconds: 300),
+                            margin: const EdgeInsets.symmetric(horizontal: 4),
+                            width: _currentPage == i ? 20 : 8,
+                            height: 8,
+                            decoration: BoxDecoration(
+                              color: _currentPage == i ? Colors.purple : Colors.grey.shade400,
+                              borderRadius: BorderRadius.circular(4),
+                            ),
                           ),
                         ),
-                      ],
-                    ),
-                    const SizedBox(height: 16),
-                  ],
-
-                  // Title
-                  Text(
-                    slide['title']!,
-                    textAlign: TextAlign.center,
-                    style: const TextStyle(
-                      fontSize: 28,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.black,
-                    ),
-                  ),
-
-                  const SizedBox(height: 20),
-
-                  // Image
-                  Image.asset(
-                    slide['image']!,
-                    width: MediaQuery.of(context).size.width * 0.9,
-                    fit: BoxFit.contain,
-                  ),
-
-                  const SizedBox(height: 20),
-
-                  // Description
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 12),
-                    child: Text(
-                      slide['desc']!,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(fontSize: 18, color: Colors.black54, height: 1.5),
-                    ),
-                  ),
-
-                  const Spacer(),
-
-                  // Dots
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: List.generate(
-                      _slides.length,
-                      (i) => AnimatedContainer(
-                        duration: const Duration(milliseconds: 300),
-                        margin: const EdgeInsets.symmetric(horizontal: 4),
-                        width: _currentPage == i ? 20 : 8,
-                        height: 8,
-                        decoration: BoxDecoration(
-                          color: _currentPage == i ? Colors.purple : Colors.grey.shade400,
-                          borderRadius: BorderRadius.circular(4),
-                        ),
                       ),
-                    ),
+                    ],
                   ),
-
-                  const SizedBox(height: 20),
-                ],
+                ),
               ),
             );
           },

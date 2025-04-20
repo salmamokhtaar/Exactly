@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:flutter_tts/flutter_tts.dart'; // ✅ NEW
 import 'dart:convert';
 
 class AnswerScreen extends StatefulWidget {
@@ -20,6 +21,7 @@ class AnswerScreen extends StatefulWidget {
 
 class _AnswerScreenState extends State<AnswerScreen> {
   bool isBookmarked = false;
+  final FlutterTts flutterTts = FlutterTts(); // ✅ TTS Instance
 
   @override
   void initState() {
@@ -51,20 +53,31 @@ class _AnswerScreenState extends State<AnswerScreen> {
 
     if (isBookmarked) {
       saved.remove(current);
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Bookmark removed')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Bookmark removed')));
     } else {
       saved.add(current);
-      ScaffoldMessenger.of(
-        context,
-      ).showSnackBar(const SnackBar(content: Text('Saved to bookmarks')));
+      ScaffoldMessenger.of(context)
+          .showSnackBar(const SnackBar(content: Text('Saved to bookmarks')));
     }
 
     await prefs.setStringList('bookmarks', saved);
     setState(() {
       isBookmarked = !isBookmarked;
     });
+  }
+
+  Future<void> speakAnswer() async {
+    await flutterTts.setLanguage("en"); // Or use "so-SO" if Somali supported
+    await flutterTts.setSpeechRate(0.45);
+    await flutterTts.setPitch(1.0);
+    await flutterTts.speak(widget.answer);
+  }
+
+  @override
+  void dispose() {
+    flutterTts.stop(); // ✅ Stop when screen is closed
+    super.dispose();
   }
 
   @override
@@ -136,26 +149,22 @@ class _AnswerScreenState extends State<AnswerScreen> {
 
             const SizedBox(height: 12),
 
-            // Play Audio Button
+            // TTS Button
             Align(
               alignment: Alignment.bottomLeft,
               child: ElevatedButton.icon(
                 icon: const Icon(Icons.volume_up),
-                label: const Text("Play Audio"),
+                label: const Text("Read Answer"),
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Colors.purple,
                   foregroundColor: Colors.white,
-                  padding: const EdgeInsets.symmetric(
-                    horizontal: 20,
-                    vertical: 12,
-                  ),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
                 ),
-                onPressed: () {
-                  // your playAudio logic here
-                },
+                onPressed: speakAnswer,
               ),
             ),
           ],
