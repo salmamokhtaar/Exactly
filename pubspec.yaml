@@ -62,6 +62,10 @@ flutter:
     - assets/health_data.json
     - assets/audio/
     - assets/girl.png
+    - assets/on-board.png
+    - assets/ok.png
+    - assets/menstrual.png
+    - assets/child.png
     
 
 
