@@ -51,7 +51,7 @@ class AboutAppScreen extends StatelessWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("About Caawiye App"),
+        title: const Text("About Caawiye Caafimaad"),
         backgroundColor: isDark ? Colors.black : const Color(0xFFEDE7F6),
         foregroundColor: Colors.purple,
       ),

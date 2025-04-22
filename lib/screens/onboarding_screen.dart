@@ -17,7 +17,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
     {
       'image': 'assets/on-board.png',
       'title': 'Welcome to Caawiye App',
-      'desc': 'Your trusted Somali health helper.\nAsk, listen, and learn easily.',
+      'desc': 'Your trusted Somali health helper. Ask, listen, and learn easily.',
     },
     {
       'image': 'assets/ok.png',
@@ -63,18 +63,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
           },
           itemBuilder: (context, index) {
             final slide = _slides[index];
-
             return SingleChildScrollView(
               child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 20),
+                padding: const EdgeInsets.fromLTRB(24, 30, 24, 20),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                    // Skip button (top-right)
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      children: [
-                        TextButton(
+                    // Skip Button
+                    Align(
+                      alignment: Alignment.topRight,
+                      child: Padding(
+                        padding: const EdgeInsets.only(right: 8.0),
+                        child: TextButton(
                           onPressed: () {
                             Navigator.pushReplacement(
                               context,
@@ -85,27 +85,28 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           },
                           child: const Text("Skip", style: TextStyle(color: Colors.purple)),
                         ),
-                      ],
+                      ),
                     ),
 
-                    // App icon and name (only on first screen)
+                    const SizedBox(height: 8),
+
+                    // App Icon + Name (only on first screen)
                     if (index == 0) ...[
-                      const SizedBox(height: 8),
                       Container(
-                        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 20),
+                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 22),
                         decoration: BoxDecoration(
                           color: Colors.purple.shade100,
-                          borderRadius: BorderRadius.circular(20),
+                          borderRadius: BorderRadius.circular(30),
                         ),
                         child: Row(
                           mainAxisSize: MainAxisSize.min,
                           children: const [
-                            Icon(Icons.medical_services_outlined, color: Colors.purple),
+                            Icon(Icons.local_hospital_outlined, color: Colors.purple),
                             SizedBox(width: 8),
                             Text(
                               'Caawiye',
                               style: TextStyle(
-                                fontSize: 26,
+                                fontSize: 24,
                                 fontWeight: FontWeight.bold,
                                 color: Colors.purple,
                               ),
@@ -113,7 +114,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                           ],
                         ),
                       ),
-                      const SizedBox(height: 20),
+                      const SizedBox(height: 30),
                     ],
 
                     // Title
@@ -127,14 +128,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ),
                     ),
 
-                    const SizedBox(height: 30),
+                    const SizedBox(height: 24),
 
-                    // Image with soft background
+                    // Image
                     Container(
-                      padding: const EdgeInsets.all(20),
+                      padding: const EdgeInsets.all(25),
                       decoration: BoxDecoration(
                         color: Colors.purple.shade50,
-                        borderRadius: BorderRadius.circular(24),
+                        borderRadius: BorderRadius.circular(30),
                       ),
                       child: Image.asset(
                         slide['image']!,
@@ -156,9 +157,9 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                       ),
                     ),
 
-                    const SizedBox(height: 40),
+                    const SizedBox(height: 36),
 
-                    // Progress dots
+                    // Dots
                     Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: List.generate(
@@ -175,7 +176,8 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                         ),
                       ),
                     ),
-                    const SizedBox(height: 20),
+
+                    const SizedBox(height: 10),
                   ],
                 ),
               ),
