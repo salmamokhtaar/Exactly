@@ -69,7 +69,7 @@ class _CaawiyeAppState extends State<CaawiyeApp> {
           secondary: Colors.purpleAccent,
         ),
       ),
-home: OnboardingScreen(onThemeToggle: toggleTheme),
+      home: OnboardingScreen(onThemeToggle: toggleTheme),
     );
   }
 }
@@ -105,10 +105,10 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
   void _onTap(int index) => setState(() => _selectedIndex = index);
 
   final List<BottomNavigationBarItem> _items = const [
-    BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-    BottomNavigationBarItem(icon: Icon(Icons.bookmark), label: 'Saved'),
-    BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'Chatbot'),
-    BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
+    BottomNavigationBarItem(icon: Icon(Icons.home_outlined), label: 'Bogga Hore'),
+    BottomNavigationBarItem(icon: Icon(Icons.bookmark_outline), label: 'Keyd'),
+    BottomNavigationBarItem(icon: Icon(Icons.chat_outlined), label: 'Wadahadal'),
+    BottomNavigationBarItem(icon: Icon(Icons.settings_outlined), label: 'Dejinta'),
   ];
 
   @override
@@ -123,6 +123,8 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         selectedItemColor: Colors.purple,
         unselectedItemColor: isDark ? Colors.white70 : Colors.grey,
         type: BottomNavigationBarType.fixed,
+        backgroundColor: Colors.transparent,
+        elevation: 0,
       ),
     );
   }

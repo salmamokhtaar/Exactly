@@ -2,52 +2,17 @@
   "Maternal Health": [
     {
       "question": "Maxaa la sameeyaa marka la ogaado in aad uur leedahay?",
-      "answer": "Waa muhiim in la arko dhakhtar si loo bilaabo daryeelka uurka.",
+      "answer": "Marka ugu horreysa ee aad ogaato inaad uur leedahay, waa muhiim in aad booqato xarun caafimaad ama dhakhtar si loo xaqiijiyo uurka loona bilaabo daryeelka caafimaad ee ku habboon. Dhakhtarka ayaa kaa caawin doona in lagu sameeyo baaritaan guud oo caafimaad, lagu qiyaaso taariikhda umulinta, iyo in la ogaado haddii aad leedahay cudurro la xiriira uurka sida dhiig-karka ama sonkorta. \n\nIntaa kadib, waxaad bilaabi doontaa daryeelka joogtada ah ee uurka (Antenatal care). Tani waxay ku siinaysaa talooyin la xiriira cuntooyinka ugu habboon, daawooyinka ay tahay inaad qaadato sida folic acid, iyo la socodka horumarka ilmaha. Sidoo kale, waxaad heli doontaa fursad aad kula hadasho xirfadlayaal caafimaad si aad u weydiiso su’aalaha kugu cusub iyo welwelka aad qabto inta lagu jiro uurka.",
       "audio": "maternal_1.mp3"
     },
     {
       "question": "Maxay yihiin calaamadaha digniinta ee uurka?",
-      "answer": "Haddii aad aragto dhiig-bax, xanuun ama wareer, la xiriir dhakhtar.",
+      "answer": "Calaamadaha digniinta ee uurka waa kuwo muujinaya in xaalad caafimaad oo khatar ah ay soo food saartay hooyada uurka leh ama ilmaha caloosha ku jira. Calaamadahan waxaa ka mid ah dhiig-bax xilliyada hore ee uurka, xanuun daran oo caloosha ama dhabarka ah, matag iyo lalabbo aad u badan oo kaa hor istaaga cunto qaadashada, ama ilmuhu oo si lama filaan ah u joojiya dhaq-dhaqaaqiisa. \n\nSidoo kale, haddii aad dareento wareer, aragti daciif ah, madax-xanuun aan joogsi lahayn, ama barar aan caadi ahayn oo ka muuqda wejiga, gacmaha ama lugaha — waa muhiim in aad isla markiiba la xiriirto xarun caafimaad. Calaamadahaasi waxay muujin karaan xaalado halis ah sida eclampsia ama infekshan. Markasta oo aad dareento isbedel caafimaad oo aan caadi ahayn, waa muhiim in lagala xiriiro dhakhtar si wax looga qabto xaaladda ka hor inta aysan noqon mid khatar ah.",
       "audio": "maternal_1.mp3"
     },
     {
       "question": "Goorma ayay tahay in la arko dhakhtar markaad uur leedahay?",
-      "answer": "Bil kasta hal mar, ama sida dhakhtarku kuu faro.",
-      "audio": "maternal_1.mp3"
-    },
-    {
-      "question": "Cunto noocee ah ayay tahay in uurleydu cunto?",
-      "answer": "Cunto nafaqo leh sida khudrad, hilib, kalluun, iyo caano.",
-      "audio": "maternal_1.mp3"
-    },
-    {
-      "question": "Miyay uurleydu cabi karaan daawo kasta?",
-      "answer": "Kaliya daawooyinka uu dhakhtarku kuu qoro.",
-      "audio": "maternal_1.mp3"
-    },
-    {
-      "question": "Miyaan jimicsi samayn karaa intaan uur leeyahay?",
-      "answer": "Haa, jimicsi fudud sida socodka waa faa’iido leh.",
-      "audio": "maternal_1.mp3"
-    },
-    {
-      "question": "Maxaa keeni kara uur lumis?",
-      "answer": "Cadaadis, dhaawac, ama dhibaatooyin caafimaad.",
-      "audio": "maternal_1.mp3"
-    },
-    {
-      "question": "Waa maxay caadada subaxnimo ee uurleyda?",
-      "answer": "Waa lalabbo iyo matag subaxdii, caadi ayay u tahay.",
-      "audio": "maternal_1.mp3"
-    },
-    {
-      "question": "Sidee loo ogaadaa jinsiga ilmaha?",
-      "answer": "Waxaa lagu ogaan karaa ultrasound-ka usbuuca 18-20.",
-      "audio": "maternal_1.mp3"
-    },
-    {
-      "question": "Waa maxay daryeelka dhalmada kadib?",
-      "answer": "Ka warqabka nadiifnimada, nafaqada, iyo nasashada hooyada.",
+      "answer": "Waxaa lagugula talinayaa in aad aragto dhakhtar marka ugu horreysa ee aad ogaato inaad uur leedahay. Booqashada ugu horreysa waa mid aad u muhiim ah si loo xaqiijiyo xaaladdaada caafimaad, loo qiyaaso waqtiga aad umuli doonto, loona ogaado haddii aad leedahay cudurro hore ama halis ah. \n\nKadib booqashada koowaad, booqashooyin joogto ah ayaa la qorsheeyaa bil kasta illaa aad gaarto usbuuca 28aad ee uurka. Intaas ka dib, booqashooyinku waxay noqon karaan 2 usbuuc kasta ilaa aad gaarto usbuuca 36aad, markaas kadibna waxaad u baahan doontaa booqasho todobaadle ah illaa aad umusho. Daryeel joogto ah oo la helo inta lagu jiro uurka ayaa si weyn hoos u dhigi kara halista dhalmo adag, uur lumis, ama dhibaatooyin kale oo dhici kara marka ilmaha dhasho.",
       "audio": "maternal_1.mp3"
     }
   ],

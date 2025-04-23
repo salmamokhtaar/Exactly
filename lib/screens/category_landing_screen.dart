@@ -11,20 +11,20 @@ class CategoryLandingScreen extends StatelessWidget {
   final List<Map<String, dynamic>> categories = const [
     {
       'icon': IconlyLight.activity,
-      'title': 'Maternal Health',
-      'subtitle': 'Uurka iyo Dhalmada',
+      'title': 'Uurka & Dhalmada',
+      'subtitle': 'Caafimaadka Hooyada',
       'color': Color(0xFF9C27B0),
     },
     {
       'icon': IconlyLight.calendar,
-      'title': 'Menstrual Health',
+      'title': 'Caadada Dumarka',
       'subtitle': 'Caafimaadka Caadada',
       'color': Color(0xFFE91E63),
     },
     {
       'icon': IconlyLight.user_1,
-      'title': 'Child Care',
-      'subtitle': 'Daryeelka Ilmaha',
+      'title': 'Daryeelka Ilmaha',
+      'subtitle': 'Caafimaadka Ilmaha',
       'color': Color(0xFF3F51B5),
     },
   ];
@@ -80,68 +80,63 @@ class CategoryLandingScreen extends StatelessWidget {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: ListView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            ...categories.map(
-              (cat) => GestureDetector(
-                onTap: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (_) => CategoryScreen(category: cat['title']!),
+            const Text(
+              'Qaybaha Caafimaadka',
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+                color: Colors.purple,
+              ),
+            ),
+            const SizedBox(height: 12),
+            Expanded(
+              child: ListView.builder(
+                itemCount: categories.length,
+                itemBuilder: (context, index) {
+                  final cat = categories[index];
+                  return GestureDetector(
+                    onTap: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (_) => CategoryScreen(category: cat['title']!),
+                        ),
+                      );
+                    },
+                    child: Container(
+                      margin: const EdgeInsets.only(bottom: 16),
+                      decoration: BoxDecoration(
+                        color: cat['color'].withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: ListTile(
+                        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+                        leading: CircleAvatar(
+                          backgroundColor: cat['color'].withOpacity(0.2),
+                          child: Icon(cat['icon'], color: cat['color']),
+                        ),
+                        title: Text(
+                          cat['title'],
+                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                        ),
+                        subtitle: Text(
+                          cat['subtitle'],
+                          style: const TextStyle(fontSize: 14, color: Colors.black54),
+                        ),
+                        trailing: const Icon(IconlyLight.arrow_right_2),
+                      ),
                     ),
                   );
                 },
-                child: Container(
-                  margin: const EdgeInsets.only(bottom: 16),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(16),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.withOpacity(0.1),
-                        spreadRadius: 1,
-                        blurRadius: 8,
-                        offset: const Offset(0, 4),
-                      ),
-                    ],
-                  ),
-                  child: ListTile(
-                    contentPadding: const EdgeInsets.symmetric(
-                      horizontal: 20,
-                      vertical: 12,
-                    ),
-                    leading: Container(
-                      padding: const EdgeInsets.all(12),
-                      decoration: BoxDecoration(
-                        shape: BoxShape.circle,
-                        color: (cat['color'] as Color).withOpacity(0.15),
-                      ),
-                      child: Icon(cat['icon'], color: cat['color']),
-                    ),
-                    title: Text(
-                      cat['title'],
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 18,
-                      ),
-                    ),
-                    subtitle: Text(
-                      cat['subtitle'],
-                      style: const TextStyle(
-                        fontSize: 14,
-                        color: Colors.black54,
-                      ),
-                    ),
-                    trailing: const Icon(IconlyLight.arrow_right_2),
-                  ),
-                ),
               ),
             ),
             const Padding(
-              padding: EdgeInsets.only(top: 32),
+              padding: EdgeInsets.only(top: 16),
               child: Text(
-                '💡 Tip: Ask the chatbot if you need private help',
+                '💡 Talo: Weydii chatbot-ka haddii aad rabto caawimaad gaar ah',
                 style: TextStyle(fontSize: 14, color: Colors.purple),
                 textAlign: TextAlign.center,
               ),
@@ -157,7 +152,7 @@ class LazyQuestionSearchDelegate extends SearchDelegate {
   List<Map<String, String>> results = [];
 
   @override
-  String get searchFieldLabel => 'Search questions...';
+  String get searchFieldLabel => 'Raadi su’aal...';
 
   Future<void> searchFromJson(String keyword) async {
     final jsonString = await rootBundle.loadString('assets/health_data.json');
@@ -183,13 +178,13 @@ class LazyQuestionSearchDelegate extends SearchDelegate {
       future: searchFromJson(query),
       builder: (context, snapshot) {
         if (query.isEmpty) {
-          return const Center(child: Text('Type to search...'));
+          return const Center(child: Text('Geli eray raadinta...'));
         }
         if (snapshot.connectionState != ConnectionState.done) {
           return const Center(child: CircularProgressIndicator());
         }
         if (results.isEmpty) {
-          return const Center(child: Text('No results found.'));
+          return const Center(child: Text('Natiijo lama helin.'));
         }
 
         return ListView.builder(
@@ -202,12 +197,11 @@ class LazyQuestionSearchDelegate extends SearchDelegate {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder:
-                        (_) => AnswerScreen(
-                          question: item['question']!,
-                          answer: item['answer']!,
-                          audioFile: item['audio']!,
-                        ),
+                    builder: (_) => AnswerScreen(
+                      question: item['question']!,
+                      answer: item['answer']!,
+                      audioFile: item['audio']!,
+                    ),
                   ),
                 );
               },
