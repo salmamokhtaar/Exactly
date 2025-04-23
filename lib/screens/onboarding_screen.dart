@@ -10,34 +10,34 @@ class OnboardingScreen extends StatefulWidget {
 }
 
 class _OnboardingScreenState extends State<OnboardingScreen> {
-  final PageController _pageController = PageController();
-  int _currentPage = 0;
+  final PageController _controller = PageController();
+  int _pageIndex = 0;
 
   final List<Map<String, String>> _slides = [
     {
       'image': 'assets/on-board.png',
-      'title': 'Welcome to Caawiye App',
-      'desc': 'Your trusted Somali health helper. Ask, listen, and learn easily.',
+      'title': 'Kusoo dhawoow Caawiye App',
+      'desc': 'Caawiye waa saaxiibkaaga caafimaadka af Soomaaliga ku hadla — weydii, dhagayso, oo wax ka baro si fudud.',
     },
     {
       'image': 'assets/ok.png',
-      'title': 'Maternal Health',
-      'desc': 'Reliable guidance for safe pregnancy and motherhood.',
+      'title': 'Caafimaadka Hooyada',
+      'desc': 'Talooyin ammaan ah iyo tilmaamo caafimaad oo kusaabsan uurka iyo daryeelka hooyonimada.',
     },
     {
       'image': 'assets/menstrual.png',
-      'title': 'Menstrual Health',
-      'desc': 'Understand your cycle, hygiene, and health with ease.',
+      'title': 'Caafimaadka Caadada',
+      'desc': 'Bar nadaafadda caadada, wareeggeeda, iyo caafimaadka dumarka.',
     },
     {
       'image': 'assets/child.png',
-      'title': 'Child Care',
-      'desc': 'Daryeel buuxa oo ku saabsan caafimaadka ilmahaaga.',
+      'title': 'Daryeelka Ilmaha',
+      'desc': 'Ka hel talooyin caafimaad iyo daryeel ku habboon ilmahaaga.',
     },
   ];
 
   void _checkAndFinish() {
-    if (_currentPage == _slides.length - 1) {
+    if (_pageIndex == _slides.length - 1) {
       Future.delayed(const Duration(milliseconds: 300), () {
         Navigator.pushReplacement(
           context,
@@ -52,138 +52,119 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF6F0FA),
-      body: SafeArea(
-        child: PageView.builder(
-          controller: _pageController,
-          itemCount: _slides.length,
-          onPageChanged: (index) {
-            setState(() => _currentPage = index);
-            _checkAndFinish();
-          },
-          itemBuilder: (context, index) {
-            final slide = _slides[index];
-            return SingleChildScrollView(
-              child: Padding(
-                padding: const EdgeInsets.fromLTRB(24, 30, 24, 20),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    // Skip Button
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Padding(
-                        padding: const EdgeInsets.only(right: 8.0),
-                        child: TextButton(
-                          onPressed: () {
-                            Navigator.pushReplacement(
-                              context,
-                              MaterialPageRoute(
-                                builder: (_) => HomeScreen(onThemeToggle: widget.onThemeToggle),
-                              ),
-                            );
-                          },
-                          child: const Text("Skip", style: TextStyle(color: Colors.purple)),
-                        ),
-                      ),
+      body: Stack(
+        children: [
+          // Background Gradient
+          Container(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [Color(0xFFD6C1E9), Color(0xFFF5EAFE)],
+                begin: Alignment.topCenter,
+                end: Alignment.bottomCenter,
+              ),
+            ),
+          ),
+
+          // Skip button only
+          Positioned(
+            top: 60,
+            right: 20,
+            child: GestureDetector(
+              onTap: () {
+                Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                    builder: (_) => HomeScreen(onThemeToggle: widget.onThemeToggle),
+                  ),
+                );
+              },
+              child: const Text(
+                "Skip",
+                style: TextStyle(
+                  color: Colors.purple,
+                  fontWeight: FontWeight.w500,
+                  fontSize: 16,
+                ),
+              ),
+            ),
+          ),
+
+          // PageView
+          PageView.builder(
+            controller: _controller,
+            itemCount: _slides.length,
+            onPageChanged: (index) {
+              setState(() => _pageIndex = index);
+              _checkAndFinish();
+            },
+            itemBuilder: (context, index) {
+              final slide = _slides[index];
+              return Column(
+                children: [
+                  const Spacer(),
+
+                  // Image
+                  Image.asset(
+                    slide['image']!,
+                    height: 280,
+                    fit: BoxFit.contain,
+                  ),
+
+                  const SizedBox(height: 30),
+
+                  // Title
+                  Text(
+                    slide['title']!,
+                    style: const TextStyle(
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.purple,
                     ),
+                    textAlign: TextAlign.center,
+                  ),
 
-                    const SizedBox(height: 8),
+                  const SizedBox(height: 12),
 
-                    // App Icon + Name (only on first screen)
-                    if (index == 0) ...[
-                      Container(
-                        padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 22),
-                        decoration: BoxDecoration(
-                          color: Colors.purple.shade100,
-                          borderRadius: BorderRadius.circular(30),
-                        ),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.min,
-                          children: const [
-                            Icon(Icons.local_hospital_outlined, color: Colors.purple),
-                            SizedBox(width: 8),
-                            Text(
-                              'Caawiye',
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.bold,
-                                color: Colors.purple,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      const SizedBox(height: 30),
-                    ],
-
-                    // Title
-                    Text(
-                      slide['title']!,
-                      textAlign: TextAlign.center,
-                      style: const TextStyle(
-                        fontSize: 28,
-                        fontWeight: FontWeight.bold,
-                        color: Colors.black,
-                      ),
-                    ),
-
-                    const SizedBox(height: 24),
-
-                    // Image
-                    Container(
-                      padding: const EdgeInsets.all(25),
-                      decoration: BoxDecoration(
-                        color: Colors.purple.shade50,
-                        borderRadius: BorderRadius.circular(30),
-                      ),
-                      child: Image.asset(
-                        slide['image']!,
-                        width: MediaQuery.of(context).size.width * 0.85,
-                        fit: BoxFit.contain,
-                      ),
-                    ),
-
-                    const SizedBox(height: 30),
-
-                    // Description
-                    Text(
+                  // Description
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 32),
+                    child: Text(
                       slide['desc']!,
                       textAlign: TextAlign.center,
                       style: const TextStyle(
-                        fontSize: 18,
+                        fontSize: 15,
                         color: Colors.black87,
                         height: 1.6,
                       ),
                     ),
+                  ),
 
-                    const SizedBox(height: 36),
+                  const SizedBox(height: 100),
 
-                    // Dots
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: List.generate(
-                        _slides.length,
-                        (i) => AnimatedContainer(
-                          duration: const Duration(milliseconds: 300),
-                          margin: const EdgeInsets.symmetric(horizontal: 5),
-                          width: _currentPage == i ? 22 : 10,
-                          height: 10,
-                          decoration: BoxDecoration(
-                            color: _currentPage == i ? Colors.purple : Colors.grey.shade400,
-                            borderRadius: BorderRadius.circular(5),
-                          ),
+                  // Dots (closer to description now)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: List.generate(
+                      _slides.length,
+                      (i) => AnimatedContainer(
+                        duration: const Duration(milliseconds: 300),
+                        margin: const EdgeInsets.symmetric(horizontal: 4),
+                        width: _pageIndex == i ? 20 : 8,
+                        height: 8,
+                        decoration: BoxDecoration(
+                          color: _pageIndex == i ? Colors.purple : Colors.grey.shade400,
+                          borderRadius: BorderRadius.circular(5),
                         ),
                       ),
                     ),
+                  ),
 
-                    const SizedBox(height: 10),
-                  ],
-                ),
-              ),
-            );
-          },
-        ),
+                  const Spacer(),
+                ],
+              );
+            },
+          ),
+        ],
       ),
     );
   }
