@@ -2,122 +2,159 @@
   "Maternal Health": [
     {
       "question": "Maxaa la sameeyaa marka la ogaado in aad uur leedahay?",
-      "answer": "Marka ugu horreysa ee aad ogaato inaad uur leedahay, waa muhiim in aad booqato xarun caafimaad ama dhakhtar si loo xaqiijiyo uurka loona bilaabo daryeelka caafimaad ee ku habboon. Dhakhtarka ayaa kaa caawin doona in lagu sameeyo baaritaan guud oo caafimaad, lagu qiyaaso taariikhda umulinta, iyo in la ogaado haddii aad leedahay cudurro la xiriira uurka sida dhiig-karka ama sonkorta. \n\nIntaa kadib, waxaad bilaabi doontaa daryeelka joogtada ah ee uurka (Antenatal care). Tani waxay ku siinaysaa talooyin la xiriira cuntooyinka ugu habboon, daawooyinka ay tahay inaad qaadato sida folic acid, iyo la socodka horumarka ilmaha. Sidoo kale, waxaad heli doontaa fursad aad kula hadasho xirfadlayaal caafimaad si aad u weydiiso su’aalaha kugu cusub iyo welwelka aad qabto inta lagu jiro uurka.",
+      "answer": "Marka aad ogaato inaad uur leedahay, talaabada ugu horreysa waa inaad booqato xarun caafimaad si loo xaqiijiyo uurka. Booqashadan waxay kaloo kuu saamaxaysaa in la sameeyo baaritaan guud, loo qiyaaso waqtiga dhalmada, iyo in lagu ogaado cudurro suuragal ah sida dhiig-karka ama macaanka. Waxaa sidoo kale muhiim ah in la bilaabo daryeelka uurka (Antenatal care), oo ah taxane booqashooyin caafimaad ah oo lagula socdo horumarka ilmaha iyo caafimaadka hooyada. Dhakhtarkaaga ayaa kula talin doona cuntada saxda ah, jimicsiga, iyo daawooyinka muhiimka ah sida folic acid si looga hortago cillado dhanka dhalmada ah.",
       "audio": "maternal_1.mp3"
     },
     {
       "question": "Maxay yihiin calaamadaha digniinta ee uurka?",
-      "answer": "Calaamadaha digniinta ee uurka waa kuwo muujinaya in xaalad caafimaad oo khatar ah ay soo food saartay hooyada uurka leh ama ilmaha caloosha ku jira. Calaamadahan waxaa ka mid ah dhiig-bax xilliyada hore ee uurka, xanuun daran oo caloosha ama dhabarka ah, matag iyo lalabbo aad u badan oo kaa hor istaaga cunto qaadashada, ama ilmuhu oo si lama filaan ah u joojiya dhaq-dhaqaaqiisa. \n\nSidoo kale, haddii aad dareento wareer, aragti daciif ah, madax-xanuun aan joogsi lahayn, ama barar aan caadi ahayn oo ka muuqda wejiga, gacmaha ama lugaha — waa muhiim in aad isla markiiba la xiriirto xarun caafimaad. Calaamadahaasi waxay muujin karaan xaalado halis ah sida eclampsia ama infekshan. Markasta oo aad dareento isbedel caafimaad oo aan caadi ahayn, waa muhiim in lagala xiriiro dhakhtar si wax looga qabto xaaladda ka hor inta aysan noqon mid khatar ah.",
-      "audio": "maternal_1.mp3"
+      "answer": "Calaamadaha digniinta ee uurka waa kuwa muujinaya in hooyada ama ilmaha ay la kulmayaan xaalad caafimaad oo halis ah. Calaamadahaasi waxaa kamid ah dhiig-bax, madax xanuun joogto ah, barar aad u daran, aragti isbeddel leh, calool xanuun daran, iyo dhaqdhaqaaq la'aanta ilmaha. Haddii aad aragto midkood, waa in si degdeg ah loola xiriiro xarun caafimaad. Tusaale ahaan, dhiig-bax xilliga uurka hore wuxuu muujin karaa uur-beelid ama xaalad kale oo khatar ah sida eclampsia, taasoo u baahan gurmad degdeg ah.",
+      "audio": "maternal_2.mp3"
     },
     {
       "question": "Goorma ayay tahay in la arko dhakhtar markaad uur leedahay?",
-      "answer": "Waxaa lagugula talinayaa in aad aragto dhakhtar marka ugu horreysa ee aad ogaato inaad uur leedahay. Booqashada ugu horreysa waa mid aad u muhiim ah si loo xaqiijiyo xaaladdaada caafimaad, loo qiyaaso waqtiga aad umuli doonto, loona ogaado haddii aad leedahay cudurro hore ama halis ah. \n\nKadib booqashada koowaad, booqashooyin joogto ah ayaa la qorsheeyaa bil kasta illaa aad gaarto usbuuca 28aad ee uurka. Intaas ka dib, booqashooyinku waxay noqon karaan 2 usbuuc kasta ilaa aad gaarto usbuuca 36aad, markaas kadibna waxaad u baahan doontaa booqasho todobaadle ah illaa aad umusho. Daryeel joogto ah oo la helo inta lagu jiro uurka ayaa si weyn hoos u dhigi kara halista dhalmo adag, uur lumis, ama dhibaatooyin kale oo dhici kara marka ilmaha dhasho.",
-      "audio": "maternal_1.mp3"
+      "answer": "Booqashada dhakhtarka waa in ay bilaabataa isla marka aad ogaato inaad uur leedahay. Booqashadan hore waxay muhiim u tahay xaqiijinta uurka iyo in la sameeyo qorshe daryeel. Inta lagu jiro uurka, hooyadu waxay u baahan tahay booqashooyin joogto ah: bil kasta ilaa usbuuca 28aad, laba usbuuc kasta ilaa 36aad, kadibna todobaad kasta ilaa dhalmada. Booqashooyinkani waxay ka hortagayaan dhibaatooyin caafimaad iyo waxay suurtagal ka dhigayaan dhalmo ammaan ah.",
+      "audio": "maternal_3.mp3"
+    },
+    {
+      "question": "Waa maxay daryeelka uurka (antenatal care) iyo maxay muhiim u tahay?",
+      "answer": "Daryeelka uurka (antenatal care) waa taxane booqashooyin caafimaad ah oo lagu sameeyo baaritaanno iyo la-talin si loo hubiyo in uurka uu si caadi ah u socdo. Waxaa lagu ogaan karaa cudurro halis ah sida dhiig-kar, sonkorow, ama infekshanno. Waxa kale oo laguu sheegayaa talooyin ku saabsan nafaqada, jimicsiga, iyo caafimaadka guud. Waa muhiim si hooyada iyo ilmaha labaduba u helaan daryeel ku habboon inta lagu jiro uurka.",
+      "audio": "maternal_4.mp3"
+    },
+    {
+      "question": "Waa maxay cunnooyinka ugu wanaagsan ee hooyada uurka leh?",
+      "answer": "Hooyada uurka leh waxaa lagula talinayaa inay cunto cunno nafaqo leh oo ay ka mid yihiin khudaar, miraha, hilibka aan baruurta lahayn, kalluun, ukumo, caano iyo waxyaabaha laga sameeyo. Waxaa kale oo muhiim ah in la qaato folic acid, birta iyo kalsiyum. Waa in laga fogaadaa cabitaannada kafeynka leh, sigaarka, iyo khamriga. Cunto fiican waxay taageertaa korriinka ilmaha iyo caafimaadka hooyada.",
+      "audio": "maternal_5.mp3"
+    },
+    {
+      "question": "Maxaa keeni kara daal badan intaad uur leedahay?",
+      "answer": "Daalka waa calaamad caadi ah xilliga uurka, gaar ahaan bilaha hore. Waxa sababa isbeddelada hormoonnada, jidhkaaga oo isku diyaarinaya korinta ilmaha, iyo cadaadis ku yimaada xubnaha muhiimka ah. Si loo yareeyo daalka, naso badan, cunto caafimaad leh, cab biyo badan, iyo jimicsi fudud sida socodka ayaa lagula talinayaa.",
+      "audio": "maternal_6.mp3"
+    },
+    {
+      "question": "Miyaan sameyn karaa jimicsi marka aan uur leeyahay?",
+      "answer": "Haa, jimicsiga fudud wuxuu faa'iido weyn u leeyahay hooyada uurka leh. Waxay caawisaa xakameynta miisaanka, hagaajinta hurdada, iyo yareynta xanuunka dhabarka. Socodka, yoga-ga uurka, iyo dabaasha waa jimicsiyo ammaan ah. Laakiin ka hor inta aadan bilaabin, la tasho dhakhtarkaaga gaar ahaan haddii aad leedahay xaalado caafimaad oo gaar ah.",
+      "audio": "maternal_7.mp3"
+    },
+    {
+      "question": "Maxay yihiin calaamadaha dhalmada soo dhawdahay?",
+      "answer": "Calaamadaha dhalmada waxay ka mid yihiin xanuun joogto ah oo dhabarka iyo caloosha hoose ka bilaabma, daadinta biyo cad (amniotic fluid), iyo garaac joogto ah oo ilmaha ah. Dumarka qaar waxay dareemaan sidoo kale isbeddel ku yimaada dareenka caloosha ama socodka. Marka aad aragto calaamadahan, diyaarso inaad u baxdo isbitaalka.",
+      "audio": "maternal_8.mp3"
+    },
+    {
+      "question": "Waa maxay muhiimadda naas nuujinta kadib dhalmada?",
+      "answer": "Naasnuujintu waa habka ugu wanaagsan ee ilmaha loogu bilaabo nolol caafimaad leh. Caanaha hooyada waxay ka kooban yihiin nafaqooyin dhameystiran iyo difaac jirka oo dabiici ah. Waxay hooyada u caawisaa yareynta dhiig-baxa dhalmada kadib, waxayna ka ilaalisaa uur degdeg ah. WHO waxay kula talisaa in ilmaha la naas-nuujiyo 6-da bilood ee ugu horreeya si gaar ah.",
+      "audio": "maternal_9.mp3"
+    },
+    {
+      "question": "Sidee loo yareeyaa welwelka iyo walbahaarka xilliga uurka?",
+      "answer": "Walbahaarka inta lagu jiro uurka waa wax caadi ah laakiin waxaa jira habab lagula tacaali karo sida neefsasho qoto dheer, nasasho, la sheekaysiga dadka kalsoonida leh, iyo jimicsi fudud. Helitaanka taageero caafimaad iyo bulsho waxay gacan ka geysaneysaa yareynta welwelka. Haddii walbahaarka aad u sii bato, la xiriir dhakhtar ama la-taliye nafsiyeed.",
+      "audio": "maternal_10.mp3"
     }
   ],
   "Menstrual Health": [
     {
       "question": "Waa maxay caado aan caadi ahayn?",
-      "answer": "Caado aan caadi ahayn waa mid dhiig badan leh ama muddo gaaban/dheer ah.",
-      "audio": "maternal_1.mp3"
+      "answer": "Caado aan caadi ahayn waxay tilmaamaysaa isbeddello ku yimaada nidaamka caadada dumarka oo aan waafaqsanayn caadada caadiga ah ee qofka. Tani waxay noqon kartaa dhiig-bax aad u badan (menorrhagia), caado muddo dheer qaadata ama mid aad u gaaban, ama mararka qaar in caadadu iska baaqato gebi ahaanba (amenorrhea). Sababaha caado aan caadi ahayn waxaa ka mid noqon kara hormoono aan isku dheellitirin, xanuunada sida PCOS, qandhooyinka, walwalka, ama culeyska jirka oo si xad dhaaf ah u kordha ama u yaraada.",
+      "audio": "menstrual_1.mp3"
     },
     {
-      "question": "Maxay yihiin xanuunada la xiriira caadada?",
-      "answer": "Xanuunka caloosha, dhabarka, iyo murqaha ayaa caadi ah.",
-      "audio": "maternal_1.mp3"
+      "question": "Maxay yihiin calaamadaha digniinta ee la xiriira caadada?",
+      "answer": "Calaamadaha digniinta waxay muujin karaan dhibaato caafimaad oo u baahan in si deg deg ah loo baaro. Kuwa ugu waaweyn waxaa ka mid ah dhiig-bax culus oo aan joogsi lahayn, caado aad u xanuun badan (dysmenorrhea) oo kaa hor istaagta inaad qabato hawl maalmeedkaaga, caado aan joogto ahayn oo isbeddel badan leh, ama dhiig ku yimaada xilliyo aan ahayn waqtiga caadada. Haddii aad aragto mid ka mid ah calaamadahan, la xiriir xarun caafimaad si deg deg ah.",
+      "audio": "menstrual_2.mp3"
     },
     {
-      "question": "Miyaan caado noqon kartaa bil la'aan?",
-      "answer": "Haa, cadaadis ama isbedelka jirka ayaa sababi kara.",
-      "audio": "maternal_1.mp3"
+      "question": "Miyaan caadadu seegi kartaa bilo ama toddobaadyo?",
+      "answer": "Haa, caadadu mararka qaar way ka baaqan kartaa dhowr toddobaad ama xataa bilo. Sababaha caadada uga baaqan kara waxaa ka mid ah uur, cadaadis (stress), culeyska jirka oo aad u kordha ama u yaraada, isbedelka deegaanka, safar dheer, cudurro hoormoono la xiriira sida PCOS ama tiroid xanuun. Haddii aad muddo ka badan 3 bilood caadada waaydo adigoon uur lahayn, waxaa muhiim ah in dhakhtar lagu arko.",
+      "audio": "menstrual_3.mp3"
     },
     {
-      "question": "Goorma ayay gabadhu bilowdaa caadada?",
-      "answer": "Badanaa da'da 10-15 sano.",
-      "audio": "maternal_1.mp3"
+      "question": "Waa maxay xanuunka caadada (Dysmenorrhea) iyo sidee loo yareeyaa?",
+      "answer": "Dysmenorrhea waa xanuunka la dareemo inta lagu jiro caadada, gaar ahaan caloosha hoose, dhabarka, iyo lugaha. Waxay u qaybsantaa laba: mid dabiici ah oo ay sababaan hormoonnada (primary) iyo mid la xiriirta cudurro (secondary) sida endometriosis. Si loo yareeyo xanuunka waxaa la isticmaali karaa daawooyinka xanuun baabi'iya sida ibuprofen, kulayl la saaro caloosha, jimicsi fudud, cabitaanka biyo badan iyo nasasho. Haddii xanuunku aad u daran yahay oo joogto noqdo, la xiriir dhakhtar.",
+      "audio": "menstrual_4.mp3"
     },
     {
-      "question": "Sidee loo xakameeyaa xanuunka caadada?",
-      "answer": "Isticmaalka daawo xanuun baabi'isa iyo nasasho ayaa caawin kara.",
-      "audio": "maternal_1.mp3"
+      "question": "Goorma ayay caadadu ku bilaabataa gabdhaha, sideese loo socodsiiyaa?",
+      "answer": "Gabdhaha badankood waxay bilaabaan caadadooda da’da u dhaxaysa 10 ilaa 15 sano. Marka caadada bilaabato, waxaa muhiim ah in la socodsiiyo iyada oo la barayo gabadha sida loo isticmaalo xafaayadda, loo ilaaliyo nadaafadda iyo in la fahamsiiyo in ay tahay arrin dabiici ah oo aan ceeb ahayn. Waxaa sidoo kale muhiim ah in la diiwaangeliyo goorta ay timaado iyo inta ay socoto si loola socdo isbeddelada jirka.",
+      "audio": "menstrual_5.mp3"
     },
     {
-      "question": "Waa maxay caado wareer?",
-      "answer": "Marka caadadu timaado wakhti kala duwan bil kasta.",
-      "audio": "maternal_1.mp3"
+      "question": "Waa maxay 'PMS' ama calaamadaha kahor caadada?",
+      "answer": "PMS (Premenstrual Syndrome) waa xaalad dumarka qaar la kulmaan kahor inta aysan bilaaban caadada. Calaamadaha waxaa ka mid ah murugo, xanaaq, madax xanuun, xanuun naasaha, daal, iyo isbeddel ku yimaada rabitaanka cuntada. Waxaa lagu xakameyn karaa jimicsi joogto ah, hurdo kugu filan, cunto caafimaad leh, iyo mararka qaar daawo yar oo dhakhtar kuu qoro.",
+      "audio": "menstrual_6.mp3"
     },
     {
-      "question": "Miyaan la socon karaa caadadayda?",
-      "answer": "Haa, adigoo isticmaalaya jadwal ama app.",
-      "audio": "maternal_1.mp3"
+      "question": "Sidee loo ilaaliyaa nadaafadda inta lagu jiro caadada?",
+      "answer": "Nadaafadda inta lagu jiro caadada waa mid muhiim u ah caafimaadka. Waa in la beddelaa xafaayadda ugu yaraan 4-6 saacadood kasta, in la dhaqdo gacmaha kahor iyo kadib xafaayad beddelka, lana isticmaalo biyo diiran iyo saabuun khafiif ah. Isticmaalka maro nadiif ah haddii aan xafaayad la heli karin ayaa sidoo kale muhiim ah in si fiican loo dhaqo oo la qalajiyo.",
+      "audio": "menstrual_7.mp3"
     },
     {
-      "question": "Miyaan u baahanahay in aan arko dhakhtar?",
-      "answer": "Haa, haddii caadadu aad u dhib badan tahay ama aan imaan.",
-      "audio": "maternal_1.mp3"
+      "question": "Miyaan sameyn karaa jimicsi inta aan caadada hayo?",
+      "answer": "Haa, jimicsigu wuxuu caawiyaa dhimista xanuunka caadada, kor u qaadida niyadda, iyo xasilinta hoormoonada. Waxaa lagu talinayaa in la sameeyo jimicsiyo fudud sida socodka, yoga, ama neefsasho qoto dheer. Haddii aad dareento daal badan, jidhkaaga dhegayso oo nasto.",
+      "audio": "menstrual_8.mp3"
     },
     {
-      "question": "Caadadu miyay saameyn ku leedahay maskaxda?",
-      "answer": "Haa, waxaa dhici karta niyad jab ama xanaaq.",
-      "audio": "maternal_1.mp3"
+      "question": "Sidee loo socodsiiyaa jadwalka caadada?",
+      "answer": "Si loo socodsiiya jadwalka caadada, waxaad isticmaali kartaa buug yar ama mobile app si aad u qorto goorta ay caadadu timaado, inta ay socoto, iyo xaddiga dhiigga. Tani waxay kaa caawinaysaa in aad ogaato haddii isbeddel ku yimaado nidaamka caadadaada. Waxay kaloo u sahleysaa dhakhtarka inuu fahmo xaaladdaada haddii aad dhibaato dareento.",
+      "audio": "menstrual_9.mp3"
     },
     {
-      "question": "Miyaan jimicsi sameyn karaa marka aan caadada hayo?",
-      "answer": "Haa, jimicsi fudud ayaa kaa yareyn kara xanuunka.",
-      "audio": "maternal_1.mp3"
+      "question": "Miyaan la hadli karaa dhakhtar haddii aan la kulmo caado aan caadi ahayn?",
+      "answer": "Haa, haddii aad aragto caado aan joogto ahayn, dhiig badan, xanuun joogto ah ama baaqashada caadada muddo dheer, waxa lagama maarmaan ah inaad la xiriirto dhakhtar. Waxaa laga yaabaa in ay jirto xaalad caafimaad oo u baahan baaritaan iyo daaweyn. Waa muhiim in dumarka ay fahmaan muhiimadda ay leedahay la xiriirka dhakhtarka si dhibaatooyinka waqti hore loo ogaado.",
+      "audio": "menstrual_10.mp3"
     }
   ],
+  
   "Child Care": [
     {
-      "question": "Sidee loo daryeelaa ilmo cusub?",
-      "answer": "Nadaafad joogto ah, naas nuujin iyo nasasho badan.",
-      "audio": "maternal_1.mp3"
+      "question": "Sidee loo daryeelaa ilmo cusub bilihii ugu horreeyay?",
+      "answer": "Daryeelka ilmaha cusub ee bilihii ugu horreeyay waa arrin aad muhiim u ah maxaa yeelay waa xilli uu ilmuhu aad ugu nugul yahay cudurrada, fuuqbaxa, iyo waxyeellooyinka kale. Waa in si joogto ah loo nadiifiyaa, gaar ahaan agagaarka xafaayadda si looga hortago finan ama finan finan (diaper rash). Ilmuhu wuxuu u baahan yahay naas nuujin buuxda 8–12 jeer maalintii oo keliya caanaha hooyada ah si uu u helo nafaqo buuxda. Hurdo ku filan, xasillooni, iyo jiritaan joogto ah oo ka yimaada hooyada ama daryeele waa lama huraan si uu ilmuhu u dareemo badbaado. Waxa kale oo muhiim ah in la ilaaliyo heerkulka qolka uu ilmuhu jiifo – mid diirran oo raaxo leh, islamarkaana aan aad u kululayn ama u qabownayn.",
+      "audio": "childcare_1.mp3"
     },
     {
-      "question": "Ilmaha goorma la talaalaa?",
-      "answer": "Bilaha 0, 2, 4, 6, iyo 9 waana muhiim.",
-      "audio": "maternal_1.mp3"
+      "question": "Ilmaha goorma la bilaabaa talaalka?",
+      "answer": "Talaalka ilmaha waxa la bilaabaa marka uu dhasho, iyadoo talaalka ugu horreeya yahay BCG (ka hortagga qaaxada) iyo Hepatitis B. Talaalada kale sida Polio, DPT, Hib iyo PCV ayaa la siiyaa bilaha 2aad, 4aad, 6aad iyo 9aad. Talaalku wuxuu ka caawiyaa in jirka ilmaha uu yeesho difaac dabiici ah oo ka hortaga cudurro halis ah sida dabaysha, jadeecada, cudurrada neef-mareenka iyo shuban-kaadi. Waa muhiim in waalidiintu ay raacaan jadwalka talaalka oo ay xog-ogaal u noqdaan muddada la bixinayo.",
+      "audio": "childcare_2.mp3"
     },
     {
-      "question": "Waa maxay sababta ilmuhu u ooyo badan yahay?",
-      "answer": "Abaal, gaajo, xanuun ama hurdo la’aan.",
-      "audio": "maternal_1.mp3"
+      "question": "Waa maxay sababaha ilmaha oohintu u badato?",
+      "answer": "Ilmaha oohintu waa habka keliya ee uu dareenkiisa ku muujiyo. Sababaha ugu waaweyn ee uu ilmaha u ooyo waxaa ka mid ah gaajo, qabow ama kulayl badan, saxaro ama kaadi uu leeyahay, rabitaan in la qaado, ama xanuun. Waalidiintu waa in ay si tartiib ah u eegaan sababta ilmaha oohintiisa, iyagoo hubinaya in xafaayadda nadiif tahay, uu si fiican u cabbay ama u naas-nuujiyey, iyo in jirkiisa uusan kulayl ama qabow xad dhaaf ah dareemayn. Haddii oohintu noqoto mid aan caadi ahayn oo aan sabab la garan karin, waxaa fiican in dhakhtar lala xiriiro si loo xaqiijiyo in aysan jirin arrin caafimaad oo u baahan daryeel deg deg ah.",
+      "audio": "childcare_3.mp3"
     },
     {
-      "question": "Sidee loo ogaadaa in ilmuhu qabo xumad?",
-      "answer": "Adigoo cabbiraaya heerkulka jirkiisa.",
-      "audio": "maternal_1.mp3"
+      "question": "Sidee loo ogaan karaa in ilmuhu leeyahay xumad?",
+      "answer": "Xumadda ilmaha waxaa lagu ogaadaa adiga oo isticmaalaya termometer si aad u cabbirto heerkulka jirkiisa. Heerkul ka badan 37.5°C waxaa loo arkaa xumad. Ilmaha yaryar, gaar ahaan da'da ka yar 3 bilood, haddii heerkulka jirku kor u kaco waa in si deg deg ah dhakhtar loola xiriiro. Calaamadaha kale ee muujin kara xumad waxaa ka mid ah: ilmuhu oo aan cunto cuneen, hurdo badan, madax-qandho, jir qabatimo, iyo maqaarka oo noqda mid kulul ama dhidid badan.",
+      "audio": "childcare_4.mp3"
     },
     {
       "question": "Sidee loo yareeyaa xumadda ilmaha?",
-      "answer": "Biyo badan iyo daawo uu dhakhtar qoray.",
-      "audio": "maternal_1.mp3"
+      "answer": "Xumadda ilmaha waxaa lagu yareyn karaa dhowr hab: \n- Siinta biyo badan ama naas-nuujin joogto ah si looga hortago fuuqbax.\n- Ku maydhidda ilmuhu biyaha diiran (laakin aan aad u qabow ama kululayn).\n- Haddii loo baahdo, waxaa la siin karaa daawo hoos u dhigta xumadda sida paracetamol — kaliya haddii dhakhtar la tasho horay loo sameeyay. \nWaa muhiim in xumad aan hoos u dhicin 1–2 maalmood gudahood in dhakhtar la arko si loo baaro sababta salka ku haysa.",
+      "audio": "childcare_5.mp3"
     },
     {
-      "question": "Waa maxay caloosha adag ee ilmaha?",
-      "answer": "Marka ilmaha calooshiisu adkaato, badanaa waa saxaro la’aan.",
-      "audio": "maternal_1.mp3"
+      "question": "Ilmaha sidee loogu bilaabaa cunto adag?",
+      "answer": "Ilmaha waxaa loo bilaabi karaa cunto adag marka uu gaaro 6 bilood jir, iyadoo wali la sii wado naas-nuujinta. Cuntada la bilaabo waa in ay noqotaa mid jilicsan, si sahlan loo liqi karo, sida baradho la shiiday, moos la jajabiyay, ama shaambo saafi ah. \nCuntada cusub waxaa la bixiyaa hal nooc markiiba muddo 3–5 maalmood ah si loo hubiyo in uusan ilmuhu la kulmin xasaasiyad. Sidoo kale, waa muhiim in la xasuusto in cuntada adag u baahan tahay nadiifnimo, diyaarinta saxda ah iyo in ilmaha uu ku fariisto meel badbaado leh marka la quudinayo.",
+      "audio": "childcare_6.mp3"
     },
     {
-      "question": "Ilmuhu ma u baahan yahay hurdo badan?",
-      "answer": "Haa, hurdo badan ayaa muhiim u ah korriinkiisa.",
-      "audio": "maternal_1.mp3"
+      "question": "Sidee loo ilaalin karaa nadaafadda ilmaha?",
+      "answer": "Nadaafadda ilmaha waxaa lagu ilaaliyaa iyada oo la maydho si joogto ah, si gaar ah agagaarka xafaayadda si looga hortago finan. Ilmaha dhashay waxaa lagu qubeyn karaa biyo diiran iyo saabuun khafiif ah oo loogu talagalay ilmaha. \nDharka ilmaha waa in la beddelaa hadba haddii uu dhidid yahay, qoyan yahay ama wasakh noqdo. Sidoo kale gacmaha waalidka ama daryeelaha waa in la dhaqo inta aan la qabanin ilmaha, gaar ahaan marka la quudinayo ama xafaayadda la beddelayo.",
+      "audio": "childcare_7.mp3"
     },
     {
-      "question": "Sidee loo bilaabaa cunto adag?",
-      "answer": "Kadib 6 bilood, tijaabi cunnooyin fudud sida baradho.",
-      "audio": "maternal_1.mp3"
+      "question": "Maxaa keeni kara finan wajiga ilmaha?",
+      "answer": "Finanka wajiga ilmaha (baby acne) waa arrin caadi ah oo dhaca marka ilmaha yaryar uu wajigiisa ka buuxsamo finan yar yar. Waxaa sababa hormoonnada hooyada oo weli ku jira dhiigga ilmaha. Finankani waa kuwo aan waxyeello lahayn, waxaana badanaa iskiis u baaba’a 2–3 toddobaad gudahood. \nLama rabo in finanka la cadaadiyo ama la mariyo waxyaabo adag, kaliya maydh wajiga ilmaha maalin kasta biyo diiran iyo maro jilicsan.",
+      "audio": "childcare_8.mp3"
     },
     {
-      "question": "Ilmaha miyaa la maydhaa maalin kasta?",
-      "answer": "Haa, si nadiifnimadiisa loo ilaaliyo.",
-      "audio": "maternal_1.mp3"
+      "question": "Ilmaha ma u baahan yahay hurdo badan?",
+      "answer": "Haa, ilmaha dhashay wuxuu u baahan yahay hurdo badan oo gaaraysa 14–17 saacadood maalintii, waxayna hurdooyinku u dhacaan qaab goos-goos ah maalin iyo habeenba. Hurdo kafiican waxay caawisaa koritaanka maskaxda, muruqyada, iyo nidaamka difaaca jirka. \nWaa muhiim in ilmaha lagu seexiyo meel ammaan ah, dhabarka u jeeda (sida ay dhakhaatiirta talo ku bixiyaan) si looga hortago halista SIDS (sudden infant death syndrome).",
+      "audio": "childcare_9.mp3"
     },
     {
-      "question": "Maxaa keena finan ilmaha wajigiisa?",
-      "answer": "Waa hormoono caadi ah, badanaa iskiis ayay u tagaan.",
-      "audio": "maternal_1.mp3"
+      "question": "Ilmaha sidee looga hortagaa fuuqbaxa?",
+      "answer": "Fuuqbaxa ilmaha waa xaalad khatar ah. Waxaa laga hortagi karaa adigoo siinaya naas-nuujin badan ama biyo (haddii uu kor u dhaafay 6 bilood). Calaamadaha fuuqbaxa waxaa ka mid ah af qallalan, saxaro qalalan, ilmo yar marka uu ooyo, iyo daal aan caadi ahayn. \nHaddii ilmuhu u muuqdo mid aad u daallan, uma kaadinayo sida caadiga ah ama uu leeyahay harag qallalan, waa muhiim in isla markiiba lala xiriiro dhakhtar.",
+      "audio": "childcare_10.mp3"
     }
   ]
+
 }

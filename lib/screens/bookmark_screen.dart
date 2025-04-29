@@ -37,31 +37,56 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+    final bgColor = theme.scaffoldBackgroundColor;
+    final textColor = theme.textTheme.bodyLarge?.color ?? Colors.black87;
+    final hintColor = isDark ? Colors.white70 : Colors.black54;
+    final cardColor = isDark ? const Color(0xFF1E1E1E) : Colors.white;
+    final borderColor = isDark ? Colors.white10 : Colors.white;
+
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Saved Questions'),
-        centerTitle: true,
-        backgroundColor: const Color(0xFFEDE7F6),
-        foregroundColor: Colors.purple,
+      backgroundColor: bgColor,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(70),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border(bottom: BorderSide(color: isDark ? Colors.white12 : Colors.white, width: 1.2)),
+          ),
+          child: AppBar(
+            backgroundColor: theme.appBarTheme.backgroundColor,
+            elevation: 0,
+            centerTitle: true,
+            title: const Text(
+              'Su\'aalaha Keydsan',
+              style: TextStyle(
+                color: Colors.purple,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+            iconTheme: const IconThemeData(color: Colors.purple),
+          ),
+        ),
       ),
       body: savedQAs.isEmpty
           ? Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
-                  Icon(Icons.bookmark_border, size: 64, color: Colors.grey),
-                  SizedBox(height: 16),
+                children: [
+                  Icon(Icons.bookmark_border, size: 64, color: hintColor),
+                  const SizedBox(height: 16),
                   Text(
-                    "No saved questions yet",
-                    style: TextStyle(fontSize: 16, color: Colors.black54),
+                    "Ma jiro su'aal keydsan",
+                    style: TextStyle(fontSize: 16, color: hintColor),
                   ),
                 ],
               ),
             )
           : ListView.separated(
-              padding: const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(20),
               itemCount: savedQAs.length,
-              separatorBuilder: (_, __) => const SizedBox(height: 12),
+              separatorBuilder: (_, __) => const SizedBox(height: 14),
               itemBuilder: (context, index) {
                 final q = savedQAs[index]['question'] ?? '';
                 final a = savedQAs[index]['answer'] ?? '';
@@ -82,33 +107,37 @@ class _BookmarkScreenState extends State<BookmarkScreen> {
                   },
                   child: Container(
                     decoration: BoxDecoration(
-                      color: Colors.pink.shade50,
-                      borderRadius: BorderRadius.circular(12),
+                      color: cardColor,
+                      borderRadius: BorderRadius.circular(16),
+                      border: Border.all(color: borderColor, width: 1.2),
                       boxShadow: [
-                        BoxShadow(
-                          color: Colors.black12,
-                          blurRadius: 4,
-                          offset: const Offset(0, 2),
-                        ),
+                        if (!isDark)
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.08),
+                            blurRadius: 6,
+                            offset: const Offset(0, 3),
+                          ),
                       ],
                     ),
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 16, vertical: 14),
+                    padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
                           q,
-                          style: const TextStyle(
-                              fontWeight: FontWeight.bold, fontSize: 16),
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 16,
+                            color: textColor,
+                          ),
                         ),
                         const SizedBox(height: 8),
                         Text(
                           a,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,
-                          style: const TextStyle(
-                            color: Colors.black87,
+                          style: TextStyle(
+                            color: hintColor,
                             fontSize: 14,
                           ),
                         ),

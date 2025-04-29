@@ -70,7 +70,7 @@ class _AnswerScreenState extends State<AnswerScreen> {
   }
 
   Future<void> speakAnswer() async {
-    await flutterTts.setLanguage("en"); // Use "so-SO" if supported
+    await flutterTts.setLanguage("en");
     await flutterTts.setSpeechRate(0.45);
     await flutterTts.setPitch(1.0);
     await flutterTts.speak(widget.answer);
@@ -88,32 +88,58 @@ class _AnswerScreenState extends State<AnswerScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+    final cardColor = isDark ? const Color(0xFF1E1E1E) : Colors.white;
+    final borderColor = isDark ? Colors.white10 : Colors.purple.shade100;
+    final answerBorderColor = isDark ? Colors.white10 : Colors.pink.shade100;
+    final textColor = theme.textTheme.bodyLarge?.color ?? Colors.black87;
+
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: const Color(0xFFF3E5F5),
-        title: const Text("Answer", style: TextStyle(color: Colors.purple)),
-        iconTheme: const IconThemeData(color: Colors.purple),
-        actions: [
-          IconButton(
-            icon: Icon(
-              isBookmarked ? Icons.bookmark : Icons.bookmark_border,
-              color: isBookmarked ? Colors.amber : Colors.grey,
-            ),
-            onPressed: toggleBookmark,
+      backgroundColor: theme.scaffoldBackgroundColor,
+      appBar: PreferredSize(
+        preferredSize: const Size.fromHeight(70),
+        child: Container(
+          decoration: BoxDecoration(
+            border: Border(bottom: BorderSide(color: isDark ? Colors.white12 : Colors.white, width: 1.2)),
           ),
-        ],
+          child: AppBar(
+            backgroundColor: theme.appBarTheme.backgroundColor,
+            elevation: 0,
+            centerTitle: true,
+            title: const Text(
+              "Caawiye Caafimaad",
+              style: TextStyle(
+                color: Colors.purple,
+                fontWeight: FontWeight.bold,
+                fontSize: 18,
+              ),
+            ),
+            iconTheme: const IconThemeData(color: Colors.purple),
+            actions: [
+              IconButton(
+                icon: Icon(
+                  isBookmarked ? Icons.bookmark : Icons.bookmark_border,
+                  color: isBookmarked ? Colors.amber : Colors.grey,
+                ),
+                onPressed: toggleBookmark,
+              ),
+            ],
+          ),
+        ),
       ),
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Question Card
+            // Question Block
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
-                color: Colors.purple.shade50,
-                borderRadius: BorderRadius.circular(12),
+                color: cardColor,
+                borderRadius: BorderRadius.circular(14),
+                border: Border.all(color: borderColor, width: 1.2),
               ),
               child: Row(
                 crossAxisAlignment: CrossAxisAlignment.start,
@@ -123,9 +149,10 @@ class _AnswerScreenState extends State<AnswerScreen> {
                   Expanded(
                     child: Text(
                       widget.question,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 16,
                         fontWeight: FontWeight.bold,
+                        color: textColor,
                       ),
                     ),
                   ),
@@ -135,37 +162,38 @@ class _AnswerScreenState extends State<AnswerScreen> {
 
             const SizedBox(height: 16),
 
-            // Answer Area
+            // Answer Block
             Expanded(
               child: Container(
                 width: double.infinity,
-                decoration: BoxDecoration(
-                  color: Colors.pink.shade50,
-                  borderRadius: BorderRadius.circular(12),
-                ),
                 padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: cardColor,
+                  borderRadius: BorderRadius.circular(14),
+                  border: Border.all(color: answerBorderColor, width: 1.2),
+                ),
                 child: SingleChildScrollView(
                   child: Text(
                     widget.answer,
-                    style: const TextStyle(fontSize: 16, color: Colors.black87),
+                    style: TextStyle(fontSize: 15.5, color: textColor),
                   ),
                 ),
               ),
             ),
 
-            const SizedBox(height: 12),
+            const SizedBox(height: 16),
 
-            // Speak + Stop Buttons
+            // Buttons
             Row(
               children: [
                 Expanded(
                   child: ElevatedButton.icon(
                     icon: const Icon(Icons.volume_up),
-                    label: const Text("Read Answer"),
+                    label: const Text("Akhri Jawaabta"),
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.purple,
+                      backgroundColor: const Color(0xFF9C27B0),
                       foregroundColor: Colors.white,
-                      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
+                      padding: const EdgeInsets.symmetric(vertical: 12),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(30),
                       ),
@@ -176,9 +204,9 @@ class _AnswerScreenState extends State<AnswerScreen> {
                 const SizedBox(width: 12),
                 ElevatedButton.icon(
                   icon: const Icon(Icons.stop),
-                  label: const Text("Stop"),
+                  label: const Text("Jooji"),
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.red,
+                    backgroundColor: const Color(0xFF9C27B0),
                     foregroundColor: Colors.white,
                     padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 12),
                     shape: RoundedRectangleBorder(

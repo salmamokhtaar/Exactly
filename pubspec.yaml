@@ -36,6 +36,8 @@ dependencies:
   shared_preferences: ^2.2.2
   audioplayers: ^6.4.0
   flutter_tts: ^3.8.2
+  animate_do: ^3.0.2
+  url_launcher: ^6.2.5
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -63,11 +65,12 @@ flutter:
     - .env
     - assets/health_data.json
     - assets/audio/
-    - assets/girl.png
+    - assets/wel.png
     - assets/on-board.png
     - assets/ok.png
     - assets/menstrual.png
     - assets/child.png
+    - assets/salma.jpg
     
 
 

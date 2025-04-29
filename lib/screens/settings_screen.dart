@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'about_app_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class SettingsScreen extends StatefulWidget {
   final VoidCallback onThemeToggle;
@@ -40,7 +41,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
       if (key == 'notifications') notifications = value;
     });
 
-    // Trigger theme change
     if (key == 'darkMode') widget.onThemeToggle();
   }
 
@@ -92,7 +92,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
           ListTile(
             leading: const Icon(Icons.info_outline),
-            title: const Text("About Caawiye App"),
+            title: const Text("About Dev & App"),
             onTap: () {
               Navigator.push(
                 context,
@@ -100,12 +100,25 @@ class _SettingsScreenState extends State<SettingsScreen> {
               );
             },
           ),
-
           const Divider(height: 40),
-          const ListTile(
-            leading: Icon(Icons.star_border),
-            title: Text("Rate the App"),
+
+          // ✅ Fixed: removed `const` from here
+          ListTile(
+            leading: const Icon(Icons.star_border),
+            title: const Text("Rate the App"),
+            onTap: () async {
+              final Uri url = Uri.parse(
+                  'https://play.google.com/store/apps/details?id=com.caawiye.app');
+              if (await canLaunchUrl(url)) {
+                await launchUrl(url, mode: LaunchMode.externalApplication);
+              } else {
+                ScaffoldMessenger.of(context).showSnackBar(
+                  const SnackBar(content: Text("Could not open store link")),
+                );
+              }
+            },
           ),
+
           const ListTile(
             leading: Icon(Icons.system_update_alt),
             title: Text("Check for Updates"),

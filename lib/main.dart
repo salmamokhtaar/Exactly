@@ -55,6 +55,11 @@ class _CaawiyeAppState extends State<CaawiyeApp> {
           foregroundColor: Colors.black,
           elevation: 0,
         ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Colors.white,
+        ),
+        cardColor: Colors.white,
+        iconTheme: const IconThemeData(color: Colors.purple),
       ),
       darkTheme: ThemeData(
         fontFamily: 'Sans',
@@ -64,6 +69,11 @@ class _CaawiyeAppState extends State<CaawiyeApp> {
           backgroundColor: Color(0xFF1F1F1F),
           foregroundColor: Colors.white,
         ),
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          backgroundColor: Color(0xFF1F1F1F),
+        ),
+        cardColor: const Color(0xFF1E1E1E),
+        iconTheme: const IconThemeData(color: Colors.white70),
         colorScheme: const ColorScheme.dark(
           primary: Colors.purple,
           secondary: Colors.purpleAccent,
@@ -123,8 +133,6 @@ class _BottomNavScreenState extends State<BottomNavScreen> {
         selectedItemColor: Colors.purple,
         unselectedItemColor: isDark ? Colors.white70 : Colors.grey,
         type: BottomNavigationBarType.fixed,
-        backgroundColor: Colors.transparent,
-        elevation: 0,
       ),
     );
   }

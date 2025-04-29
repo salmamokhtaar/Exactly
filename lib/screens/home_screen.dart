@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:caawiye_caafimaad/main.dart';
+
 class HomeScreen extends StatelessWidget {
   final void Function(bool) onThemeToggle;
 
@@ -7,8 +8,10 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final isDark = Theme.of(context).brightness == Brightness.dark;
+
     return Scaffold(
-      backgroundColor: const Color(0xFFFFF1F7),
+      backgroundColor: isDark ? const Color(0xFF121212) : const Color(0xFFFFF1F7),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24.0),
@@ -17,10 +20,10 @@ class HomeScreen extends StatelessWidget {
             children: [
               const CircleAvatar(
                 radius: 50,
-                backgroundImage: AssetImage('assets/girl.png'),
+                backgroundImage: AssetImage('assets/on-board.png'),
               ),
               const SizedBox(height: 24),
-              const Text(
+              Text(
                 "Caawiye Caafimaad",
                 style: TextStyle(
                   fontSize: 28,
@@ -29,9 +32,12 @@ class HomeScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 8),
-              const Text(
+              Text(
                 "Reliable Somali Health Help",
-                style: TextStyle(fontSize: 16, color: Colors.black54),
+                style: TextStyle(
+                  fontSize: 16,
+                  color: isDark ? Colors.white70 : Colors.black54,
+                ),
                 textAlign: TextAlign.center,
               ),
               const SizedBox(height: 32),

@@ -2,7 +2,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:iconly/iconly.dart';
-import 'answer_screen.dart';
 import 'category_screen.dart';
 
 class CategoryLandingScreen extends StatelessWidget {
@@ -13,48 +12,71 @@ class CategoryLandingScreen extends StatelessWidget {
       'icon': IconlyLight.activity,
       'title': 'Uurka & Dhalmada',
       'subtitle': 'Caafimaadka Hooyada',
+      'key': 'Maternal Health',
       'color': Color(0xFF9C27B0),
     },
     {
       'icon': IconlyLight.calendar,
       'title': 'Caadada Dumarka',
       'subtitle': 'Caafimaadka Caadada',
+      'key': 'Menstrual Health',
       'color': Color(0xFFE91E63),
     },
     {
       'icon': IconlyLight.user_1,
       'title': 'Daryeelka Ilmaha',
       'subtitle': 'Caafimaadka Ilmaha',
+      'key': 'Child Care',
       'color': Color(0xFF3F51B5),
     },
   ];
 
-  Future<List<Map<String, String>>> loadAllQuestions() async {
-    final String jsonString = await rootBundle.loadString(
-      'assets/health_data.json',
-    );
-    final Map<String, dynamic> data = json.decode(jsonString);
+  final List<Map<String, dynamic>> tips = const [
+    {
+      'icon': IconlyLight.chat,
+      'text': 'Weydii chatbot-ka haddii aad rabto caawimaad gaar ah.',
+    },
+    {
+      'icon': IconlyLight.bookmark,
+      'text': 'Akhriso su’aalaha ugu badan ee haweenku qabaan.',
+    },
+  ];
 
-    final List<Map<String, String>> all = [];
+  Future<List<Map<String, String>>> loadCategoryQuestions(String categoryKey) async {
+    try {
+      final String jsonString = await rootBundle.loadString('assets/health_data.json');
+      final Map<String, dynamic> data = json.decode(jsonString);
+      final List<Map<String, String>> questions = [];
 
-    data.forEach((category, items) {
-      for (var q in items) {
-        all.add({
-          'question': q['question'],
-          'answer': q['answer'],
-          'audio': q['audio'],
-        });
+      if (data.containsKey(categoryKey)) {
+        for (var q in data[categoryKey]) {
+          questions.add({
+            'question': q['question'] ?? '',
+            'answer': q['answer'] ?? '',
+            'audio': q['audio'] ?? '',
+          });
+        }
       }
-    });
-
-    return all;
+      return questions;
+    } catch (e) {
+      debugPrint('Error loading questions: $e');
+      return [];
+    }
   }
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final isDark = theme.brightness == Brightness.dark;
+    final bgColor = theme.scaffoldBackgroundColor;
+    final cardColor = isDark ? const Color(0xFF1E1E1E) : Colors.white;
+    final textColor = theme.textTheme.bodyLarge?.color ?? Colors.black87;
+    final hintColor = isDark ? Colors.white70 : Colors.black54;
+
     return Scaffold(
+      backgroundColor: bgColor,
       appBar: AppBar(
-        backgroundColor: const Color(0xFFEDE7F6),
+        backgroundColor: theme.appBarTheme.backgroundColor,
         elevation: 0,
         centerTitle: true,
         title: const Text(
@@ -66,168 +88,114 @@ class CategoryLandingScreen extends StatelessWidget {
           ),
         ),
         iconTheme: const IconThemeData(color: Colors.purple),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.search, color: Colors.purple),
-            onPressed: () {
-              showSearch(
-                context: context,
-                delegate: LazyQuestionSearchDelegate(),
-              );
-            },
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(20),
+        children: [
+          Text(
+            'Soo dhowow Caawiye 👋',
+            style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: textColor),
           ),
-        ],
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(20.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            const Text(
-              'Qaybaha Caafimaadka',
-              style: TextStyle(
-                fontSize: 22,
-                fontWeight: FontWeight.bold,
-                color: Colors.purple,
-              ),
-            ),
-            const SizedBox(height: 12),
-            Expanded(
-              child: ListView.builder(
-                itemCount: categories.length,
-                itemBuilder: (context, index) {
-                  final cat = categories[index];
-                  return GestureDetector(
-                    onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (_) => CategoryScreen(category: cat['title']!),
-                        ),
-                      );
-                    },
-                    child: Container(
-                      margin: const EdgeInsets.only(bottom: 16),
-                      decoration: BoxDecoration(
-                        color: cat['color'].withOpacity(0.1),
-                        borderRadius: BorderRadius.circular(20),
-                      ),
-                      child: ListTile(
-                        contentPadding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
-                        leading: CircleAvatar(
-                          backgroundColor: cat['color'].withOpacity(0.2),
-                          child: Icon(cat['icon'], color: cat['color']),
-                        ),
-                        title: Text(
-                          cat['title'],
-                          style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
-                        ),
-                        subtitle: Text(
-                          cat['subtitle'],
-                          style: const TextStyle(fontSize: 14, color: Colors.black54),
-                        ),
-                        trailing: const Icon(IconlyLight.arrow_right_2),
-                      ),
-                    ),
-                  );
-                },
-              ),
-            ),
-            const Padding(
-              padding: EdgeInsets.only(top: 16),
-              child: Text(
-                '💡 Talo: Weydii chatbot-ka haddii aad rabto caawimaad gaar ah',
-                style: TextStyle(fontSize: 14, color: Colors.purple),
-                textAlign: TextAlign.center,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
+          const SizedBox(height: 6),
+          Text(
+            'Dooro qaybta aad rabto inaad wax ka barato.',
+            style: TextStyle(fontSize: 15, color: hintColor),
+          ),
+          const SizedBox(height: 24),
 
-class LazyQuestionSearchDelegate extends SearchDelegate {
-  List<Map<String, String>> results = [];
-
-  @override
-  String get searchFieldLabel => 'Raadi su’aal...';
-
-  Future<void> searchFromJson(String keyword) async {
-    final jsonString = await rootBundle.loadString('assets/health_data.json');
-    final Map<String, dynamic> data = json.decode(jsonString);
-
-    results.clear();
-    data.forEach((_, questions) {
-      for (var q in questions) {
-        if (q['question'].toLowerCase().contains(keyword.toLowerCase())) {
-          results.add({
-            'question': q['question'],
-            'answer': q['answer'],
-            'audio': q['audio'],
-          });
-        }
-      }
-    });
-  }
-
-  @override
-  Widget buildSuggestions(BuildContext context) {
-    return FutureBuilder(
-      future: searchFromJson(query),
-      builder: (context, snapshot) {
-        if (query.isEmpty) {
-          return const Center(child: Text('Geli eray raadinta...'));
-        }
-        if (snapshot.connectionState != ConnectionState.done) {
-          return const Center(child: CircularProgressIndicator());
-        }
-        if (results.isEmpty) {
-          return const Center(child: Text('Natiijo lama helin.'));
-        }
-
-        return ListView.builder(
-          itemCount: results.length,
-          itemBuilder: (context, index) {
-            final item = results[index];
-            return ListTile(
-              title: Text(item['question']!),
-              onTap: () {
+          ...categories.map(
+            (cat) => GestureDetector(
+              onTap: () async {
+                final questions = await loadCategoryQuestions(cat['key']);
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (_) => AnswerScreen(
-                      question: item['question']!,
-                      answer: item['answer']!,
-                      audioFile: item['audio']!,
+                    builder: (_) => CategoryScreen(
+                      category: cat['title'],
+                      questions: questions,
                     ),
                   ),
                 );
               },
-            );
-          },
-        );
-      },
-    );
-  }
+              child: Container(
+                margin: const EdgeInsets.only(bottom: 16),
+                decoration: BoxDecoration(
+                  color: cardColor,
+                  borderRadius: BorderRadius.circular(16),
+                  border: Border.all(color: cat['color'], width: 1.4),
+                ),
+                child: Padding(
+                  padding: const EdgeInsets.all(16),
+                  child: Row(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.all(12),
+                        decoration: BoxDecoration(
+                          shape: BoxShape.circle,
+                          color: cat['color'].withOpacity(0.1),
+                        ),
+                        child: Icon(cat['icon'], color: cat['color'], size: 24),
+                      ),
+                      const SizedBox(width: 16),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Text(
+                              cat['title'],
+                              style: TextStyle(
+                                fontSize: 16,
+                                fontWeight: FontWeight.bold,
+                                color: textColor,
+                              ),
+                            ),
+                            const SizedBox(height: 4),
+                            Text(
+                              cat['subtitle'],
+                              style: TextStyle(fontSize: 13, color: hintColor),
+                            ),
+                          ],
+                        ),
+                      ),
+                      Icon(IconlyLight.arrow_right_2, color: hintColor),
+                    ],
+                  ),
+                ),
+              ),
+            ),
+          ),
 
-  @override
-  Widget buildResults(BuildContext context) => buildSuggestions(context);
+          const SizedBox(height: 32),
 
-  @override
-  List<Widget> buildActions(BuildContext context) {
-    return [
-      if (query.isNotEmpty)
-        IconButton(icon: const Icon(Icons.clear), onPressed: () => query = ''),
-    ];
-  }
-
-  @override
-  Widget buildLeading(BuildContext context) {
-    return IconButton(
-      icon: const Icon(Icons.arrow_back),
-      onPressed: () => close(context, null),
+          Text(
+            '💡 Talooyin Faa’iido leh',
+            style: TextStyle(fontSize: 15, fontWeight: FontWeight.bold, color: Colors.purple),
+          ),
+          const SizedBox(height: 12),
+          ...tips.map(
+            (tip) => Container(
+              margin: const EdgeInsets.only(bottom: 12),
+              padding: const EdgeInsets.all(14),
+              decoration: BoxDecoration(
+                color: isDark ? const Color(0xFF2C2C2C) : const Color(0xFFEDE7F6),
+                borderRadius: BorderRadius.circular(16),
+              ),
+              child: Row(
+                children: [
+                  Icon(tip['icon'], color: Colors.purple, size: 20),
+                  const SizedBox(width: 12),
+                  Expanded(
+                    child: Text(
+                      tip['text'],
+                      style: TextStyle(fontSize: 14, color: textColor),
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

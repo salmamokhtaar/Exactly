@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:animate_do/animate_do.dart';
 
 class AboutAppScreen extends StatelessWidget {
   const AboutAppScreen({super.key});
@@ -6,107 +7,158 @@ class AboutAppScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final isDark = Theme.of(context).brightness == Brightness.dark;
-    final background = isDark ? const Color(0xFF1F1F1F) : Colors.white;
-    final borderColor = isDark ? Colors.grey.shade800 : Colors.grey.shade300;
-
-    Widget buildInfoCard({
-      required String emoji,
-      required String title,
-      required String description,
-    }) {
-      return Container(
-        margin: const EdgeInsets.symmetric(vertical: 10),
-        padding: const EdgeInsets.all(16),
-        decoration: BoxDecoration(
-          color: background,
-          borderRadius: BorderRadius.circular(16),
-          border: Border.all(color: borderColor),
-          boxShadow: [
-            BoxShadow(
-              color: isDark ? Colors.black26 : Colors.grey.withOpacity(0.08),
-              blurRadius: 8,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "$emoji  $title",
-              style: const TextStyle(fontWeight: FontWeight.w600, fontSize: 17),
-            ),
-            const SizedBox(height: 6),
-            Text(
-              description,
-              style: TextStyle(
-                fontSize: 15,
-                color: isDark ? Colors.grey[300] : Colors.black87,
-              ),
-            ),
-          ],
-        ),
-      );
-    }
+    final textColor = isDark ? Colors.white : Colors.black87;
+    final subTextColor = isDark ? Colors.white70 : Colors.black54;
+    final cardColor = isDark ? const Color(0xFF1E1E1E) : Colors.white;
+    const primaryColor = Color(0xFF9C27B0); // Your Caawiye purple
 
     return Scaffold(
       appBar: AppBar(
-        title: const Text("About Caawiye Caafimaad"),
-        backgroundColor: isDark ? Colors.black : const Color(0xFFEDE7F6),
-        foregroundColor: Colors.purple,
+        title: const Text("Developer's Info"),
+        backgroundColor: isDark ? Colors.black : Colors.white,
+        foregroundColor: Colors.black,
+        elevation: 0.5,
       ),
-      body: Container(
-        width: double.infinity,
+      body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),
         child: Column(
           children: [
-            Expanded(
-              child: ListView(
-                children: [
-                  buildInfoCard(
-                    emoji: "📱",
-                    title: "App Name",
-                    description: "Caawiye Caafimaad",
-                  ),
-                  buildInfoCard(
-                    emoji: "🎯",
-                    title: "Goal",
-                    description:
-                        "To provide easy access to Somali health guidance — in your language, at your fingertips.",
-                  ),
-                  buildInfoCard(
-                    emoji: "🤔",
-                    title: "Why this App?",
-                    description:
-                        "Many Somalis lack reliable health information. Caawiye bridges the gap with trusted answers and a friendly chatbot.",
-                  ),
-                ],
+            const SizedBox(height: 20),
+
+            // Logo
+            ZoomIn(
+              child: Container(
+                padding: const EdgeInsets.all(20),
+                decoration: const BoxDecoration(
+                  shape: BoxShape.circle,
+                  color: Color(0xFF9C27B0), // Caawiye purple
+                ),
+                child: Image.asset(
+                  'assets/ok.png',
+                  height: 60,
+                  width: 60,
+                  fit: BoxFit.contain,
+                ),
               ),
             ),
-            const SizedBox(height: 10),
-            Column(
-              children: [
-                const SizedBox(height: 12),
-                Text(
-                  "Made with ❤️ in Somalia",
-                  style: TextStyle(
-                    color: Colors.purple,
-                    fontStyle: FontStyle.italic,
-                    fontWeight: FontWeight.w500,
-                  ),
+
+            const SizedBox(height: 20),
+
+            // Title
+            FadeInDown(
+              child: Text(
+                "Caawiye",
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: primaryColor,
                 ),
-                Text(
-                  "Developed by Salma",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontStyle: FontStyle.italic,
-                    fontSize: 12,
-                  ),
-                ),
-                const SizedBox(height: 20),
-                // Cards below...
-              ],
+              ),
             ),
+
+            const SizedBox(height: 10),
+
+            // Description
+            FadeIn(
+              duration: const Duration(milliseconds: 600),
+              child: Text(
+                "Caawiye is a next-generation Somali health assistant app designed to provide accessible, trusted guidance on maternal, menstrual, and child health. Experience friendly support and timely answers through our AI-powered chatbot.",
+                style: TextStyle(
+                  fontSize: 15,
+                  color: subTextColor,
+                  height: 1.6,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+
+            const SizedBox(height: 30),
+
+            // Section Title
+            const Text(
+              "Developer's Info",
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+                color: Colors.purple,
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            // Developer Avatar
+            BounceInDown(
+              child: CircleAvatar(
+                radius: 50,
+                backgroundImage: AssetImage("assets/salma.jpg"),
+              ),
+            ),
+
+            const SizedBox(height: 20),
+
+            // Name
+            Text(
+              "Salma Mukhtar",
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: textColor,
+              ),
+            ),
+
+            const SizedBox(height: 12),
+
+            // Contact Card
+            FadeInUp(
+              delay: const Duration(milliseconds: 300),
+              child: Container(
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                padding: const EdgeInsets.all(16),
+                decoration: BoxDecoration(
+                  color: cardColor,
+                  borderRadius: BorderRadius.circular(16),
+                  boxShadow: [
+                    BoxShadow(
+                      color:
+                          isDark
+                              ? Colors.black26
+                              : Colors.grey.withOpacity(0.1),
+                      blurRadius: 8,
+                      offset: const Offset(0, 3),
+                    ),
+                  ],
+                ),
+                child: Column(
+                  children: [
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(Icons.phone, color: Colors.purple),
+                        SizedBox(width: 8),
+                        Text("+252617157083", style: TextStyle(fontSize: 15)),
+                      ],
+                    ),
+                    const SizedBox(height: 12),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: const [
+                        Icon(Icons.email, color: Colors.purple),
+                        SizedBox(width: 8),
+                        Flexible(
+                          child: Text(
+                            "salmam.mohyadiin@gmail.com",
+                            style: TextStyle(fontSize: 15),
+                            overflow: TextOverflow.ellipsis,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+              ),
+            ),
+
+            const SizedBox(height: 20),
           ],
         ),
       ),
